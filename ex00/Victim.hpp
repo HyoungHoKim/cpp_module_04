@@ -12,7 +12,7 @@ protected:
 public:
 	Victim(std::string _name);
 	Victim(const Victim &_victim);
-	~Victim();
+	virtual ~Victim();
 	Victim &operator=(const Victim &_victim);
 
 	std::string get_name(void) const;
