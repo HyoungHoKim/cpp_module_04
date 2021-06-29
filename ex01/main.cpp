@@ -6,8 +6,11 @@
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
 
-int main(void)
+#include "Character.hpp"
+
+void my_test(void)
 {
+
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 
@@ -35,5 +38,38 @@ int main(void)
 	
 	delete sm;
 	delete rs;
+	return ;
+}
+
+void basic_test(void)
+{
+	Character* me = new Character("me");
+
+	std::cout << *me;
+
+	Enemy* b = new RadScorpion();
+
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
+
+	me->equip(pr);
+	std::cout << *me;
+	me->equip(pf);
+
+	me->attack(b);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	return ;
+}
+
+int main(void)
+{
+	basic_test();
+	//my_test();
 	return 0;
 }

@@ -43,9 +43,15 @@ void Character::attack(Enemy *_enemy)
 {
 	if (this->weaponPtr != NULL)
 	{
-		std::cout << this->name << " attack " << _enemy->getName() 
+		if (this->ap < this->weaponPtr->getAPCost())
+		{
+			std::cout << "Not Enough AP!!!" << std::endl;
+			return ;
+		}
+		this->ap -= this->weaponPtr->getAPCost();
+		std::cout << this->name << " attack " << _enemy->getType() 
 		<< " with a " << this->weaponPtr->getName() << std::endl;
-
+		this->weaponPtr->attack();
 		_enemy->takeDamage(this->weaponPtr->getDamage());
 		if (_enemy->getHP() <= 0)
 		{
@@ -60,7 +66,7 @@ std::string Character::getName(void) const
 	return (this->name);
 }
 
-std::string Character::getAP(void) const
+int Character::getAP(void) const
 {
 	return (this->ap);
 }
@@ -70,14 +76,18 @@ AWeapon *Character::getAWeaponPtr(void) const
 	return (this->weaponPtr);
 }
 
-std::ostream &operator<<(std::ostream &os, const Character &_character);
+std::ostream &operator<<(std::ostream &os, const Character &_character)
 {
 	if (_character.getAWeaponPtr() == NULL)
+	{
 		os << _character.getName() << " has " << _character.getAP() 
 		<< " AP and is unarmed" << std::endl;
+	}
 	else
+	{
 		os << _character.getName() << " has " << _character.getAP() 
 		<< " AP and wields a " << _character.getAWeaponPtr()->getName()
-		<<std::endl;
+		<< std::endl;
+	}
 	return (os);
 }

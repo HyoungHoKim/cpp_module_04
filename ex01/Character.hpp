@@ -5,6 +5,7 @@
 #include <string>
 
 #include "AWeapon.hpp"
+#include "Enemy.hpp"
 
 class Character
 {
@@ -24,7 +25,7 @@ public:
 	void attack(Enemy *_enemy);
 
 	std::string getName(void) const;
-	std::string getAP(void) const;
+	int getAP(void) const;
 	AWeapon *getAWeaponPtr(void) const;
 };
 
