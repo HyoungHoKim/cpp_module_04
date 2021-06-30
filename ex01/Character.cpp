@@ -41,23 +41,21 @@ void Character::equip(AWeapon *_aweapon)
 
 void Character::attack(Enemy *_enemy)
 {
-	if (this->weaponPtr != NULL)
+	if (this->weaponPtr == NULL)
+		std::cout << this->name << " has " << this->ap << " AP and is unarmed" << std::endl;
+	else if (this->ap < this->weaponPtr->getAPCost())
+		std::cout << "Not Enough AP!!!" << std::endl;
+	else if (!_enemy || _enemy->getHP() <= 0)
+		std::cout << "The enemy is already Dead!!!" << std::endl;
+	else
 	{
-		if (this->ap < this->weaponPtr->getAPCost())
-		{
-			std::cout << "Not Enough AP!!!" << std::endl;
-			return ;
-		}
 		this->ap -= this->weaponPtr->getAPCost();
 		std::cout << this->name << " attack " << _enemy->getType() 
 		<< " with a " << this->weaponPtr->getName() << std::endl;
 		this->weaponPtr->attack();
 		_enemy->takeDamage(this->weaponPtr->getDamage());
 		if (_enemy->getHP() <= 0)
-		{
 			delete _enemy;
-			_enemy = NULL;
-		}
 	}
 }
 

@@ -10,7 +10,7 @@
 
 void my_test(void)
 {
-
+	std::cout << "------- My Test -------" << std::endl;
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 
@@ -30,19 +30,28 @@ void my_test(void)
 	rs->takeDamage(26);
 	std::cout << sm->getHP() << std::endl;
 	std::cout << rs->getHP() << std::endl;
-
-	sm->takeDamage(1000);
-	rs->takeDamage(1000);
-	std::cout << sm->getHP() << std::endl;
-	std::cout << rs->getHP() << std::endl;
 	
-	delete sm;
-	delete rs;
+	Character *me = new Character("me");
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->attack(sm);
+	me->recoverAP();
+	me->attack(sm);
+
 	return ;
 }
 
 void basic_test(void)
 {
+	std::cout << "------- Basic Test -------" << std::endl;
 	Character* me = new Character("me");
 
 	std::cout << *me;
@@ -70,6 +79,6 @@ void basic_test(void)
 int main(void)
 {
 	basic_test();
-	//my_test();
+	my_test();
 	return 0;
 }
