@@ -86,3 +86,9 @@ void Character::use(int idx, ICharacter& target)
 	if (idx >= 0 && idx < this->save_cnt)
 		this->inventory[idx]->use(target);
 }
+
+void Character::print_inv_xp(void)
+{
+	for (int i = 0; i < this->save_cnt; i++)
+		std::cout << this->inventory[i]->getXP() << std::endl;
+}

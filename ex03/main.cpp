@@ -45,9 +45,12 @@ void my_test(void)
 	me->use(-1, *me);
 	me->use(0, *me);
 	me->use(1, *me);
+	me->use(1, *me);
 	me->use(2, *me);
 	me->use(3, *me);
 	me->use(4, *me);
+
+	me->print_inv_xp();
 
 	delete src;
 	delete src1;

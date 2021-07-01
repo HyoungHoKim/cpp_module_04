@@ -49,11 +49,6 @@ void AMateria::setXP(int xp)
 	this->_xp = xp;
 }
 
-AMateria* AMateria::clone(void) const
-{
-	return (new AMateria(*this));
-}
-
 void AMateria::use(ICharacter& target)
 {
 	this->_xp += 10;

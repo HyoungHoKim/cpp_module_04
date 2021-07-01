@@ -9,6 +9,8 @@
 class Sorcerer
 {
 private:
+	Sorcerer();
+
 	std::string name;
 	std::string title;
 

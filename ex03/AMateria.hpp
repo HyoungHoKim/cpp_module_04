@@ -27,7 +27,7 @@ public:
 	void setType(std::string _type);
 	void setXP(int xp);
 
-	virtual AMateria* clone(void) const;
+	virtual AMateria* clone(void) const = 0;
 	virtual void use(ICharacter& target);
 };
 

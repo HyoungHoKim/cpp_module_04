@@ -8,11 +8,13 @@ void my_test(void)
 	std::cout << "------- My Test -------" << std::endl;
 	Sorcerer robert("Robert", "the Magnificent");
 
+	Victim david("david");
 	Peon jim("Jimmy");
 	Peom joe("Joe");
 
-	std::cout << robert << jim << joe;
+	std::cout << robert << david << jim << joe;
 
+	robert.polymorph(david);
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 	return ;
