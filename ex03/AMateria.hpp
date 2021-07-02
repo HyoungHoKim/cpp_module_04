@@ -16,7 +16,7 @@ protected:
 	unsigned int _xp;
 
 public:
-	AMateria(std::string _type);
+	AMateria(std::string const &_type);
 	AMateria(const AMateria &_amateria);
 	virtual ~AMateria();
 	AMateria &operator=(const AMateria &_amateria);

@@ -6,7 +6,7 @@ AMateria::AMateria()
 	this->_xp = 0;
 }
 
-AMateria::AMateria(std::string _type)
+AMateria::AMateria(std::string const &_type)
 : type(_type)
 {
 	this->_xp = 0;
