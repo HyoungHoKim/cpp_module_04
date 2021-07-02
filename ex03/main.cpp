@@ -24,10 +24,10 @@ void my_test(void)
 	std::cout << src1->getSaveCnt() << std::endl;
 
 	Character* me = new Character("me");
-	tmp = src1->createMateria("ice");
-	me->equip(tmp);
-	tmp = src1->createMateria("cure");
-	me->equip(tmp);
+	AMateria *tmp1 = src1->createMateria("ice");
+	me->equip(tmp1);
+	AMateria *tmp2 = src1->createMateria("cure");
+	me->equip(tmp2);
 	tmp = src1->createMateria("ice");
 	me->equip(tmp);
 	tmp = src1->createMateria("cure");
@@ -41,17 +41,20 @@ void my_test(void)
 	std::cout << me->getSaveCnt() << std::endl;
 
 	me->unequip(0);
-	me->unequip(1);
+	me->unequip(0);
 	me->use(-1, *me);
 	me->use(0, *me);
-	me->use(1, *me);
 	me->use(1, *me);
 	me->use(2, *me);
 	me->use(3, *me);
 	me->use(4, *me);
 
+	std::cout << "-------- check xp ---------" << std::endl;
+	me->use(1, *me);
 	me->print_inv_xp();
 
+	delete tmp1;
+	delete tmp2;
 	delete src;
 	delete src1;
 	delete me;
@@ -86,6 +89,6 @@ int main()
 	basic_test();
 	my_test();
 
-	system("leaks ex03");
+	system("leaks a");
 	return 0;
 }

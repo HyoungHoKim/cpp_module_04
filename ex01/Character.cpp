@@ -59,7 +59,7 @@ void Character::attack(Enemy *_enemy)
 	}
 }
 
-std::string Character::getName(void) const
+const std::string &Character::getName(void) const
 {
 	return (this->name);
 }

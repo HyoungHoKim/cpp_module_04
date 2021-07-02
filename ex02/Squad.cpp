@@ -9,14 +9,18 @@ Squad::Squad()
 
 Squad::Squad(const Squad &_squad)
 {
-	if (this->army != NULL)
+	if (this->army != NULL && this->count > 0)
 	{
 		for (int i = 0; i < this->count; i++)
 			delete(this->army[i]);
-		delete[] army;
-		delete[] army_old_ptr;
-
-		this->count = _squad.getCount();
+		delete[] this->army;
+		delete[] this->army_old_ptr;
+		this->army = NULL;
+		this->army_old_ptr = NULL;
+	}
+	this->count = _squad.getCount();
+	if (this->count > 0)
+	{
 		this->army = new ISpaceMarine*[this->count];
 		this->army_old_ptr = new ISpaceMarine*[this->count];
 		for (int i = 0; i < this->count; i++)
@@ -42,14 +46,18 @@ Squad &Squad::operator=(const Squad &_squad)
 {
 	if (this == &_squad)
 		return (*this);
-	if (this->army != NULL)
+	if (this->army != NULL && this->count > 0)
 	{
 		for (int i = 0; i < this->count; i++)
 			delete(this->army[i]);
 		delete[] this->army;
 		delete[] this->army_old_ptr;
-		
-		this->count = _squad.getCount();
+		this->army = NULL;
+		this->army_old_ptr = NULL;
+	}
+	this->count = _squad.getCount();
+	if (this->count > 0)
+	{
 		this->army = new ISpaceMarine*[this->count];
 		this->army_old_ptr = new ISpaceMarine*[this->count];
 		for (int i = 0; i < this->count; i++)

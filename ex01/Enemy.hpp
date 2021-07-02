@@ -6,7 +6,8 @@
 
 class Enemy 
 {
-private:
+protected:
+	Enemy();
 	int hp;
 	std::string type;
 
@@ -16,7 +17,7 @@ public:
 	virtual ~Enemy();
 	Enemy &operator=(const Enemy &_enemy);
 
-	std::string getType(void) const;
+	std::string const &getType(void) const;
 	int getHP(void) const;
 	
 	virtual void takeDamage(int _damage);

@@ -26,7 +26,7 @@ AWeapon &AWeapon::operator=(const AWeapon &_aweapon)
 	return (*this);
 }
 
-std::string AWeapon::getName(void) const
+const std::string &AWeapon::getName(void) const
 {
 	return (this->name);
 }

@@ -7,8 +7,8 @@
 class Victim
 {
 protected:
+	Victim();
 	std::string name;
-
 public:
 	Victim(std::string _name);
 	Victim(const Victim &_victim);

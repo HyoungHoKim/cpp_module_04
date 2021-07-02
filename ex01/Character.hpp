@@ -10,6 +10,7 @@
 class Character
 {
 private:
+	Character();
 	std::string name;
 	int ap;
 	AWeapon *weaponPtr;
@@ -24,7 +25,7 @@ public:
 	void equip(AWeapon *_aweapon);
 	void attack(Enemy *_enemy);
 
-	std::string getName(void) const;
+	std::string const &getName(void) const;
 	int getAP(void) const;
 	AWeapon *getAWeaponPtr(void) const;
 };

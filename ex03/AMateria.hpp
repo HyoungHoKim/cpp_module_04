@@ -10,12 +10,12 @@ class ICharacter;
 
 class AMateria
 {
-private:
+protected:
+	AMateria();
 	std::string type;
 	unsigned int _xp;
 
 public:
-	AMateria();
 	AMateria(std::string _type);
 	AMateria(const AMateria &_amateria);
 	virtual ~AMateria();

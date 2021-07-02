@@ -6,18 +6,18 @@
 
 class AWeapon
 {
-private:
+protected:
+	AWeapon();
 	std::string name;
 	int ap_cost;
 	int damage;
-
 public:
 	AWeapon(std::string const &name, int apcost, int damage);
 	AWeapon(const AWeapon &_aweapon);
 	virtual ~AWeapon();
 	AWeapon &operator=(const AWeapon &_aweapon);
 	
-	std::string getName(void) const;
+	std::string const &getName(void) const;
 	int getAPCost(void) const;
 	int getDamage(void) const;
 	

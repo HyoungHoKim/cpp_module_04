@@ -8,6 +8,8 @@
 
 class Peom : public Victim
 {
+private:
+	Peom();
 public:
 	Peom(std::string _name);
 	Peom(const Peom &_peom);

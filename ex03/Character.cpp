@@ -69,7 +69,7 @@ void Character::unequip(int idx)
 	if (this->inventory[idx] == 0)
 		std::cout << "It's empty!" << std::endl;
 	else if (idx < 0 || idx > 3)
-		std::cout << "Wrond Index" << std::endl;
+		std::cout << "Wrong Index" << std::endl;
 	else
 	{
 		for (int i = idx; i < 3; i++)

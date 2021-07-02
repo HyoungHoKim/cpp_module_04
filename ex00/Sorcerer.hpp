@@ -10,10 +10,8 @@ class Sorcerer
 {
 private:
 	Sorcerer();
-
 	std::string name;
 	std::string title;
-
 public:
 	Sorcerer(std::string _name, std::string _title);
 	Sorcerer(const Sorcerer &_sorcerer);
