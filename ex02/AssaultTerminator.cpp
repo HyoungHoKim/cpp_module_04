@@ -6,7 +6,9 @@ AssaultTerminator::AssaultTerminator()
 }
 
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &_at)
-{ }
+{
+	*this = _at;
+}
 
 AssaultTerminator::~AssaultTerminator()
 {

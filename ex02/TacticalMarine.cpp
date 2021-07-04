@@ -6,7 +6,9 @@ TacticalMarine::TacticalMarine()
 }
 
 TacticalMarine::TacticalMarine(const TacticalMarine &_tm)
-{ }
+{
+	*this = _tm;
+}
 
 TacticalMarine::~TacticalMarine()
 {
