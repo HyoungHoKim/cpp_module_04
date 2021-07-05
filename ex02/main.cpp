@@ -57,6 +57,7 @@ void my_test(void)
 	std::cout << "--- Same_Unit ---" << std::endl;
 	vlc->push(a);
 	vlc->push(a);
+	vlc->push(b);
 	std::cout << vlc->getCount() << std::endl;
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
